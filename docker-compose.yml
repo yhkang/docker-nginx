@@ -9,6 +9,7 @@ services:
   nginx:
     image: nginx
     restart: always
+    container_name: nginx
     ports:
       - "80:80"
       - "443:443"
@@ -19,6 +20,7 @@ services:
   bitwarden:
     image: bitwardenrs/server:latest
     restart: always
+    container_name: bitwarden
     volumes:
       - ./bitwarden/data:/data
     env_file:
